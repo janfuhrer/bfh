@@ -28,7 +28,7 @@ Berechnet wird anschliessend die Wahrscheinlichkeit, dass man auf eine Webseite 
 
 ### Implementation
 
-See [pageRank-java](pageRank-java/src/main/java/}
+See [pageRank-java](pageRank-java/src/main/java/)
 
 ## Task c
 
