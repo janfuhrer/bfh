@@ -10,10 +10,10 @@ public class Vertex {
     Vertex(String label){
         this.label = label;
         if (this.inEdges == null){
-            this.inEdges = new ArrayList<Vertex>();
+            this.inEdges = new ArrayList<>();
         }
         if (this.outEdges == null){
-            this.outEdges = new ArrayList<Vertex>();
+            this.outEdges = new ArrayList<>();
         }
     }
 
@@ -49,9 +49,7 @@ public class Vertex {
 
     @Override
     public String toString() {
-        return "Vertex{" +
-                "label='" + label + '\'' +
-                '}';
+        return label;
     }
 
     @Override

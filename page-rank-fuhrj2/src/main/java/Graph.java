@@ -55,25 +55,28 @@ public class Graph {
         System.out.println("-------------------------");
         System.out.println("Ingoing Edges for vertex " + v.getLabel());
         System.out.println("-------------------------");
-        for (Vertex s : v.getInEdges()){
-            System.out.println(s.getLabel());
-        }
+        v.getInEdges().forEach(System.out::println);
 
-        System.out.println("");
-        System.out.println("-------------------------");
+        System.out.println("\n-------------------------");
         System.out.println("Outgoing Edges for vertex " + v.getLabel());
         System.out.println("-------------------------");
-        for (Vertex s : v.getOutEdges()){
-            System.out.println(s.getLabel());
-        }
+        v.getOutEdges().forEach(System.out::println);
     }
     // getVertex
     void getVertex(){
         System.out.println("-------------------------");
         System.out.println("All vertex in map ");
         System.out.println("-------------------------");
-        for (var entry : vertexMap.entrySet()) {
-            System.out.println(entry.getValue().getLabel());
-        }
+        // print all vertex (label)
+        Set<String> keySet = vertexMap.keySet();
+        keySet.forEach(System.out::println);
+    }
+    // vertexSet
+    int size(){
+        return vertexMap.entrySet().size();
+    }
+    // getMap
+    Map<String, Vertex> getMap(){
+        return this.vertexMap;
     }
 }
