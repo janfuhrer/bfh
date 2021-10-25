@@ -5,9 +5,9 @@
 *Create a simple representation in code of a Directed Graph with weighted nodes.*
 
 See 
-* Class [Vertex](page-rank-fuhrj2/src/main/java/Class)
-* Class [Graph](page-rank-fuhrj2/src/main/java/Graph)
-* Class [TaskA](page-rank-fuhrj2/src/main/java/TaskA)
+* Class [Vertex](page-rank-fuhrj2/src/main/java/Vertex.java)
+* Class [Graph](page-rank-fuhrj2/src/main/java/Graph.java)
+* Class [TaskA](page-rank-fuhrj2/src/main/java/TaskA.java)
 
 ## Task b
 
@@ -32,11 +32,11 @@ Berechnet wird anschliessend die Wahrscheinlichkeit, dass man auf eine Webseite 
 ### Implementation
 
 See
-* Class [randomsurfer](page-rank-fuhrj2/src/main/java/RandomSurfer)
-* Class [TaskB](page-rank-fuhrj2/src/main/java/TaskB)
+* Class [randomsurfer](page-rank-fuhrj2/src/main/java/RandomSurfer.java)
+* Class [TaskB](page-rank-fuhrj2/src/main/java/TaskB.java)
 
 ## Task c
 
 *Apply your algorithm to a real world example, not being websites.*
 
-* Class [TaskC](page-rank-fuhrj2/src/main/java/TaskC)
+* Class [TaskC](page-rank-fuhrj2/src/main/java/TaskC.java)

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="directed-graph-java" />
+        <module name="page-rank-fuhrj2" />
       </profile>
     </annotationProcessing>
   </component>
