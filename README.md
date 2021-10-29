@@ -39,7 +39,7 @@ Der PageRank eines Knoten in einem Graph ist wie folgt definiert:
 
 **Random Surfer Model**
 
-Ein alternative Interpretation des PageRank-Algorithmus ist das *Random Surfer Model*. In diesem Modell beginnt der Surfer auf irgendeiner Webseite und gelangt über die Links auf eine andere Seite. Nach einer gewissen Zeit wird der Weg abgebrochen und neu begonnen. 
+Eine alternative Interpretation des PageRank-Algorithmus ist das *Random Surfer Model*. In diesem Modell beginnt der Surfer auf irgendeiner Webseite und gelangt über die Links auf eine andere Seite. Nach einer gewissen Zeit wird der Weg abgebrochen und neu begonnen. 
 Berechnet wird anschliessend die Wahrscheinlichkeit, dass man auf eine Webseite stösst, wenn man sich zufällig durchs Web "klickt".
 
 ### Implementation
@@ -53,7 +53,7 @@ Berechnet wird anschliessend die Wahrscheinlichkeit, dass man auf eine Webseite 
 
 ### Implementation
 
-Für das Beispiel wurden Personen, unterteilt in berühmten Politiker und Freunde gewählt. Der PageRank ermittelt hier die "Bekanntheit" der einzelnen Personen in der gesamten Auswahl an Personen. Je höher der PageRank, desto bekannter ist die Person in der Gruppe.
+Für das Beispiel wurden Personen, unterteilt in berühmten Politiker und Freunde, gewählt. Der PageRank ermittelt hier die "Bekanntheit" der einzelnen Personen in der gesamten Auswahl an Personen. Je höher der PageRank, desto bekannter ist die Person in der Gruppe.
 
 * TaskC: [Class TaskC](page-rank-fuhrj2/src/main/java/TaskC.java)
 

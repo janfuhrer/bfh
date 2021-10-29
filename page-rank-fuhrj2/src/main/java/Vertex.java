@@ -7,7 +7,7 @@ public class Vertex {
     private List<Vertex> outEdges;
 
     // constructor
-    Vertex(String label){
+    Vertex(String label) {
         this.label = label;
         if (this.inEdges == null){
             this.inEdges = new ArrayList<>();
