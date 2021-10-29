@@ -13,7 +13,7 @@ public class Graph {
         vertexMap.put(label,v);
     }
     // removeVertex method
-    public void removeVertex(String label){
+    public void removeVertex(String label) {
         Vertex v = vertexMap.get(label);
         // remove all links to or from this vertex from the graph
         v.getOutEdges().forEach(e -> e.removeInEdge(v));
@@ -25,7 +25,7 @@ public class Graph {
         return this.vertexMap.isEmpty();
     }
     // addEdge method
-    public void addEdge(String startLabel, String endLabel){
+    public void addEdge(String startLabel, String endLabel) throws IllegalArgumentException {
         if (vertexMap.containsKey(startLabel) && vertexMap.containsKey(endLabel)) {
             Vertex startVertex = vertexMap.get(startLabel);
             Vertex endVertex = vertexMap.get(endLabel);
@@ -38,14 +38,14 @@ public class Graph {
         }
     }
     // removeEdge method
-    public void removeEdge(String startLabel, String endLabel){
+    public void removeEdge(String startLabel, String endLabel) throws IllegalArgumentException {
         if (vertexMap.containsKey(startLabel) && vertexMap.containsKey(endLabel)) {
             Vertex startVertex = vertexMap.get(startLabel);
             Vertex endVertex = vertexMap.get(endLabel);
-            if (startVertex.getOutEdges() != null){
+            if (startVertex.getOutEdges() != null) {
                 startVertex.removeOutEdge(endVertex);
             }
-            if (endVertex.getInEdges() != null){
+            if (endVertex.getInEdges() != null) {
                 endVertex.removeInEdge(startVertex);
             }
         } else {
@@ -53,7 +53,7 @@ public class Graph {
         }
     }
     // getEdges method
-    public void getEdges(String label){
+    public void getEdges(String label) {
         Vertex v = vertexMap.get(label);
 
         System.out.println("-------------------------");
@@ -67,16 +67,15 @@ public class Graph {
         v.getOutEdges().forEach(System.out::println);
     }
     // printVertex method
-    public void printVertex(){
+    public void printVertex() {
         System.out.println("-------------------------");
         System.out.println("all vertices in graph ");
         System.out.println("-------------------------");
         // print all vertex (label)
-        Set<String> keySet = vertexMap.keySet();
-        keySet.forEach(System.out::println);
+        vertexMap.keySet().forEach(System.out::println);
     }
     // size method
-    public int size(){
+    public int size() {
         return vertexMap.entrySet().size();
     }
     // getVertices method

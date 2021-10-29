@@ -3,7 +3,7 @@ public class TaskA {
         // create graph
         Graph graph = new Graph();
 
-        // create vertex
+        // create vertices
         graph.addVertex("srf.ch");
         graph.addVertex("bls.ch");
         graph.addVertex("sbb.ch");

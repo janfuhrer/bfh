@@ -10,13 +10,13 @@ public class PageRank {
     private double diff;
 
     // constructor
-    public PageRank(Graph graph){
+    public PageRank(Graph graph) {
         this.graph = graph;
         this.scores = new HashMap<>();
     }
 
     // getVertexScore method
-    public Double getVertexScore(Vertex vertex){
+    public Double getVertexScore(Vertex vertex) {
         return scores.get(vertex);
     }
 
@@ -24,8 +24,7 @@ public class PageRank {
     // evaluate method
     public void evaluate() throws UnsupportedOperationException {
         if (graph.isEmpty()) {
-            System.out.println("!! No vertex in graph !!");
-            throw new UnsupportedOperationException();
+            throw new UnsupportedOperationException("no vertex in graph");
         }
 
         int totalVertices = graph.size();
@@ -46,7 +45,7 @@ public class PageRank {
         // run algorithm until maxIterations or terminationDelta is reached
         int iterationCount = 0;
         do {
-            if (iterationCount < maxIterations){
+            if (iterationCount < maxIterations) {
                 iteration();
                 iterationCount++;
             } else {
@@ -67,7 +66,7 @@ public class PageRank {
         Map<Vertex, Double> newRanks = new HashMap<>();
         double nonOutgoingEdgesBalance = 0;
 
-        for (Vertex v : graph.getVertices()){
+        for (Vertex v : graph.getVertices()) {
             double sum = 0;
             for (Vertex inEdge : v.getInEdges()) {
                 sum += scores.get(inEdge) / inEdge.getOutEdges().size();
@@ -96,20 +95,18 @@ public class PageRank {
     }
 
     // printRank method
-    public void printRank() throws UnsupportedOperationException{
+    public void printRank() throws UnsupportedOperationException {
         System.out.println("----------------------");
         System.out.println("-- Display PageRank --");
         System.out.println("----------------------");
         if (graph.isEmpty()) {
-            System.out.println("!! no vertex in graph !!");
-            throw new UnsupportedOperationException();
+            throw new UnsupportedOperationException("no vertex in graph");
         }
         else if (scores.isEmpty()) {
-            System.out.println("!! PageRank not yet calculated !!");
-            throw new UnsupportedOperationException();
+            throw new UnsupportedOperationException("PageRank not yet calculated");
         } else {
             // print every vertex with associated PageRank, sorted by value
-            scores.entrySet().stream().sorted(Map.Entry.<Vertex, Double>comparingByValue()).forEach(System.out::println);
+            scores.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(System.out::println);
         }
     }
 }
