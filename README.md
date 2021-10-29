@@ -5,9 +5,9 @@
 *Create a simple representation in code of a Directed Graph with weighted nodes.*
 
 **See**
-* Class [Vertex](page-rank-fuhrj2/src/main/java/Vertex.java)
-* Class [Graph](page-rank-fuhrj2/src/main/java/Graph.java)
-* Class [TaskA](page-rank-fuhrj2/src/main/java/TaskA.java)
+* Vertex Class [Vertex](page-rank-fuhrj2/src/main/java/Vertex.java)
+* Graph Class [Graph](page-rank-fuhrj2/src/main/java/Graph.java)
+* TaskA Class [TaskA](page-rank-fuhrj2/src/main/java/TaskA.java)
 
 ## Task b
 
@@ -24,20 +24,37 @@ Jede Webseite stellt einen Knoten mit einem Gewicht (PageRank) in einem *gewicht
 * Das eigene Gewicht gibt die Seite anteilsmässig an alle verlinkenden Seiten weiter (Gewicht durch Anzahl ausgehenden Links).
 * Der sogenannte Dämpfungsfaktor wurde eingefügt, damit das Gewicht nicht zu Seiten abfliesst, welche auf keine anderen verweisen.
 
+**Algorithmus**
+
+Der PageRank eines Knoten in einem Graph ist wie folgt definiert:
+
+![algo](https://latex.codecogs.com/gif.latex?PR_i&space;=&space;%5Cfrac&space;%7B1-d%7D&space;%7Bn%7D&space;&plus;&space;d&space;%5C,&space;%5Csum_%7Bj&space;=&space;1%7D%5En&space;%5Cfrac&space;%7BPR_j%7D&space;%7Bc_j%7D)
+
+*n*: Anzahl Knoten im Graph
+*d*: Dämpfungsfaktor
+*PR(i)*: PageRank einer Seite
+*PR(j)*: PageRank der auf i verlinkenden Seiten
+*c(j)*: Anzahl Links auf der Seite *j*
+
 **Random Surfer Model**
 
-Für die Berechnung der Gewichtung wird das sogenannten "Random Surfer Model" verwendet. Dabei beginnt der Surfer auf irgendeiner Webseite und gelangt über die Links auf eine andere Seite. Nach einer gewissen Zeit wird der Weg abgebrochen und neu begonnen. 
+Ein alternative Interpretation des PageRank-Algorithmus ist das *Random Surfer Model*. In diesem Modell beginnt der Surfer auf irgendeiner Webseite und gelangt über die Links auf eine andere Seite. Nach einer gewissen Zeit wird der Weg abgebrochen und neu begonnen. 
 Berechnet wird anschliessend die Wahrscheinlichkeit, dass man auf eine Webseite stösst, wenn man sich zufällig durchs Web "klickt".
 
 ### Implementation
 
 **See**
-* Class [PageRank](page-rank-fuhrj2/src/main/java/PageRank.java)
-* Class [TaskB](page-rank-fuhrj2/src/main/java/TaskB.java)
+* PageRank Class [PageRank](page-rank-fuhrj2/src/main/java/PageRank.java)
+* TaskB Class [TaskB](page-rank-fuhrj2/src/main/java/TaskB.java)
 
 ## Task c
 
 *Apply your algorithm to a real world example, not being websites.*
 
 **See**
-* Class [TaskC](page-rank-fuhrj2/src/main/java/TaskC.java)
+* TaskC Class [TaskC](page-rank-fuhrj2/src/main/java/TaskC.java)
+
+## Sources
+- https://www.suchmaschinen-doktor.de/algorithmen/pagerank.html
+- http://www.javased.com/index.php?source_dir=gs-algo/src/org/graphstream/algorithm/PageRank.java
+- https://sebastianviereck.de/pagerank-algorithmus-java/

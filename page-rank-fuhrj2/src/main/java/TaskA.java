@@ -1,6 +1,5 @@
 public class TaskA {
     public static void main(String[] args){
-
         // create graph
         Graph graph = new Graph();
 
@@ -20,15 +19,15 @@ public class TaskA {
         graph.addEdge("salt.ch", "sunrise.ch");
         graph.addEdge("swisscom.ch", "bls.ch");
 
-        // remove some vertex and edges
+        // remove some vertices and edges
         graph.removeVertex("bls.ch");
         graph.removeEdge("salt.ch","sunrise.ch");
 
-        // get some edges
-        graph.getEdges("srf.ch");
+        // get all vertices in graph
+        graph.printVertex();
 
-        // get all vertex
+        // get all edges of a specific vertex
         System.out.println("");
-        graph.getVertex();
+        graph.getEdges("srf.ch");
     }
 }

@@ -7,21 +7,25 @@ public class Graph {
     public Graph() {
         this.vertexMap = new HashMap<>();
     }
-    // addVertex
-    void addVertex(String label) {
+    // addVertex method
+    public void addVertex(String label) {
         Vertex v = new Vertex(label);
         vertexMap.put(label,v);
     }
-    // removeVertex
-    void removeVertex(String label){
+    // removeVertex method
+    public void removeVertex(String label){
         Vertex v = vertexMap.get(label);
         // remove all links to or from this vertex from the graph
         v.getOutEdges().forEach(e -> e.removeInEdge(v));
         v.getInEdges().forEach(e -> e.removeOutEdge(v));
         vertexMap.remove(label);
     }
-    // addEdge
-    void addEdge(String startLabel, String endLabel){
+    // isEmpty method
+    public boolean isEmpty() {
+        return this.vertexMap.isEmpty();
+    }
+    // addEdge method
+    public void addEdge(String startLabel, String endLabel){
         if (vertexMap.containsKey(startLabel) && vertexMap.containsKey(endLabel)) {
             Vertex startVertex = vertexMap.get(startLabel);
             Vertex endVertex = vertexMap.get(endLabel);
@@ -33,8 +37,8 @@ public class Graph {
             throw new IllegalArgumentException("failed to add edge from " + startLabel + " to " + endLabel);
         }
     }
-    // removeEdge
-    void removeEdge(String startLabel, String endLabel){
+    // removeEdge method
+    public void removeEdge(String startLabel, String endLabel){
         if (vertexMap.containsKey(startLabel) && vertexMap.containsKey(endLabel)) {
             Vertex startVertex = vertexMap.get(startLabel);
             Vertex endVertex = vertexMap.get(endLabel);
@@ -48,35 +52,39 @@ public class Graph {
             throw new IllegalArgumentException("failed to remove edge from " + startLabel + " to " + endLabel);
         }
     }
-    // getEdges
-    void getEdges(String label){
+    // getEdges method
+    public void getEdges(String label){
         Vertex v = vertexMap.get(label);
 
         System.out.println("-------------------------");
-        System.out.println("Ingoing Edges for vertex " + v.getLabel());
+        System.out.println("incoming edges for vertex " + v.getLabel());
         System.out.println("-------------------------");
         v.getInEdges().forEach(System.out::println);
 
         System.out.println("\n-------------------------");
-        System.out.println("Outgoing Edges for vertex " + v.getLabel());
+        System.out.println("outgoing edges for vertex " + v.getLabel());
         System.out.println("-------------------------");
         v.getOutEdges().forEach(System.out::println);
     }
-    // getVertex
-    void getVertex(){
+    // printVertex method
+    public void printVertex(){
         System.out.println("-------------------------");
-        System.out.println("All vertex in map ");
+        System.out.println("all vertices in graph ");
         System.out.println("-------------------------");
         // print all vertex (label)
         Set<String> keySet = vertexMap.keySet();
         keySet.forEach(System.out::println);
     }
-    // vertexSet
-    int size(){
+    // size method
+    public int size(){
         return vertexMap.entrySet().size();
     }
-    // getMap
-    Map<String, Vertex> getMap(){
-        return this.vertexMap;
+    // getVertices method
+    public  Collection<Vertex> getVertices() {
+        return this.vertexMap.values();
+    }
+    // getVertex method
+    public Vertex getVertex(String label) {
+        return vertexMap.get(label);
     }
 }
