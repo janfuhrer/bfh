@@ -32,6 +32,7 @@ public class PageRank {
 
         System.out.println("------------------------");
         System.out.println("-- Calculate PageRank --");
+        System.out.println("------------------------");
         System.out.println("terminationDelta: " + terminationDelta);
         System.out.println("totalVertices: " + totalVertices);
         System.out.println("maxIterations: " + maxIterations);
@@ -54,8 +55,7 @@ public class PageRank {
                 diff = terminationDelta;
             }
         } while (diff > terminationDelta);
-        System.out.println("iterationCount: " + iterationCount);
-        System.out.println("------------------------\n");
+        System.out.println("iterationCount: " + iterationCount + "\n");
     }
 
     // iteration method
@@ -65,7 +65,7 @@ public class PageRank {
         double dampingTerm = (1 - dampingFactor) / totalVertices;
         // create a temporary map for the new calculated ranks of this iteration
         Map<Vertex, Double> newRanks = new HashMap<>();
-        double nonOutgoingEdges = 0;
+        double nonOutgoingEdgesBalance = 0;
 
         for (Vertex v : graph.getVertices()){
             double sum = 0;
@@ -74,20 +74,20 @@ public class PageRank {
             }
             // save the new calculated rank
             newRanks.put(v,dampingTerm + dampingFactor * sum);
-            // add rank of vertex the nonOutgoingEdges variable, if there are no outgoing edges
+            // add rank of vertex to the nonOutgoingEdgesBalance var, if there are no outgoing edges
             if (v.getOutEdges().size() == 0) {
-                nonOutgoingEdges += scores.get(v);
+                nonOutgoingEdgesBalance += scores.get(v);
             }
         }
 
-        // calculate the nonOutgoingEdges var
-        nonOutgoingEdges *= dampingFactor / totalVertices;
+        // calculate the nonOutgoingEdgesBalance var
+        nonOutgoingEdgesBalance *= dampingFactor / totalVertices;
 
         diff = 0;
         for (Vertex v : graph.getVertices()) {
             double currentRank = scores.get(v);
-            // calculate the final rank with the nonOutgoingEdges var
-            double newRank = newRanks.get(v) + nonOutgoingEdges;
+            // calculate the final rank with the nonOutgoingEdgesBalance var
+            double newRank = newRanks.get(v) + nonOutgoingEdgesBalance;
             // calculate the new diff
             diff += Math.abs(newRank - currentRank);
             // save the new score
@@ -99,6 +99,7 @@ public class PageRank {
     public void printRank() throws UnsupportedOperationException{
         System.out.println("----------------------");
         System.out.println("-- Display PageRank --");
+        System.out.println("----------------------");
         if (graph.isEmpty()) {
             System.out.println("!! no vertex in graph !!");
             throw new UnsupportedOperationException();
@@ -107,11 +108,8 @@ public class PageRank {
             System.out.println("!! PageRank not yet calculated !!");
             throw new UnsupportedOperationException();
         } else {
-            // print every vertex with associated PageRank
-            for (var entry : scores.entrySet()) {
-                System.out.println(entry.getKey().toString() + ": " + entry.getValue());
-            }
+            // print every vertex with associated PageRank, sorted by value
+            scores.entrySet().stream().sorted(Map.Entry.<Vertex, Double>comparingByValue()).forEach(System.out::println);
         }
-        System.out.println("----------------------");
     }
 }

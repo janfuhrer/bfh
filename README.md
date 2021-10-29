@@ -4,10 +4,11 @@
 
 *Create a simple representation in code of a Directed Graph with weighted nodes.*
 
-**See**
-* Vertex Class [Vertex](page-rank-fuhrj2/src/main/java/Vertex.java)
-* Graph Class [Graph](page-rank-fuhrj2/src/main/java/Graph.java)
-* TaskA Class [TaskA](page-rank-fuhrj2/src/main/java/TaskA.java)
+### Implementation
+
+* Vertex: [Class Vertex](page-rank-fuhrj2/src/main/java/Vertex.java)
+* Graph: [Class Graph](page-rank-fuhrj2/src/main/java/Graph.java)
+* TaskA: [Class TaskA](page-rank-fuhrj2/src/main/java/TaskA.java)
 
 ## Task b
 
@@ -30,11 +31,11 @@ Der PageRank eines Knoten in einem Graph ist wie folgt definiert:
 
 ![algo](https://latex.codecogs.com/gif.latex?PR_i&space;=&space;%5Cfrac&space;%7B1-d%7D&space;%7Bn%7D&space;&plus;&space;d&space;%5C,&space;%5Csum_%7Bj&space;=&space;1%7D%5En&space;%5Cfrac&space;%7BPR_j%7D&space;%7Bc_j%7D)
 
-*n*: Anzahl Knoten im Graph
-*d*: Dämpfungsfaktor
-*PR(i)*: PageRank einer Seite
-*PR(j)*: PageRank der auf i verlinkenden Seiten
-*c(j)*: Anzahl Links auf der Seite *j*
+* *n*: Anzahl Knoten im Graph
+* *d*: Dämpfungsfaktor
+* *PR(i)*: PageRank einer Seite
+* *PR(j)*: PageRank der auf i verlinkenden Seiten
+* *c(j)*: Anzahl ausgehende Links auf der Seite *j*
 
 **Random Surfer Model**
 
@@ -43,16 +44,18 @@ Berechnet wird anschliessend die Wahrscheinlichkeit, dass man auf eine Webseite 
 
 ### Implementation
 
-**See**
-* PageRank Class [PageRank](page-rank-fuhrj2/src/main/java/PageRank.java)
-* TaskB Class [TaskB](page-rank-fuhrj2/src/main/java/TaskB.java)
+* PageRank Algorithmus: [Class PageRank](page-rank-fuhrj2/src/main/java/PageRank.java)
+* TaskB: [Class TaskB](page-rank-fuhrj2/src/main/java/TaskB.java)
 
 ## Task c
 
 *Apply your algorithm to a real world example, not being websites.*
 
-**See**
-* TaskC Class [TaskC](page-rank-fuhrj2/src/main/java/TaskC.java)
+### Implementation
+
+Für das Beispiel wurden Personen, unterteilt in berühmten Politiker und Freunde gewählt. Der PageRank ermittelt hier die "Bekanntheit" der einzelnen Personen in der gesamten Auswahl an Personen. Je höher der PageRank, desto bekannter ist die Person in der Gruppe.
+
+* TaskC: [Class TaskC](page-rank-fuhrj2/src/main/java/TaskC.java)
 
 ## Sources
 - https://www.suchmaschinen-doktor.de/algorithmen/pagerank.html
