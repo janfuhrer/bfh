@@ -6,6 +6,8 @@
 
 ### Implementation
 
+Es wurden die Klassen *Vertex* und *Graph* erstelt, welche die Knoten und den Directed Graph darstellen. In der Klasse *TaskA* wurde ein Beispiel-Graph mit einigen Knoten und Kanten erstellt. Alle Knoten des Graphen werden auf `System.out` ausgegeben, gefolgt von der Ausgabe aller ausgehenden und eingehenden Kanten des Beispiel-Knoten `srf.ch`.
+
 * Vertex: [Class Vertex](page-rank-fuhrj2/src/main/java/Vertex.java)
 * Graph: [Class Graph](page-rank-fuhrj2/src/main/java/Graph.java)
 * TaskA: [Class TaskA](page-rank-fuhrj2/src/main/java/TaskA.java)
@@ -29,7 +31,7 @@ Jede Webseite stellt einen Knoten mit einem Gewicht (PageRank) in einem *gewicht
 
 Der PageRank eines Knoten in einem Graph ist wie folgt definiert:
 
-![algo](https://latex.codecogs.com/gif.latex?PR_i&space;=&space;%5Cfrac&space;%7B1-d%7D&space;%7Bn%7D&space;&plus;&space;d&space;%5C,&space;%5Csum_%7Bj&space;=&space;1%7D%5En&space;%5Cfrac&space;%7BPR_j%7D&space;%7Bc_j%7D)
+![pagerank-algorithm](pagerank.png)
 
 * *n*: Anzahl Knoten im Graph
 * *d*: Dämpfungsfaktor
@@ -39,10 +41,15 @@ Der PageRank eines Knoten in einem Graph ist wie folgt definiert:
 
 **Random Surfer Model**
 
-Eine alternative Interpretation des PageRank-Algorithmus ist das *Random Surfer Model*. In diesem Modell beginnt der Surfer auf irgendeiner Webseite und gelangt über die Links auf eine andere Seite. Nach einer gewissen Zeit wird der Weg abgebrochen und neu begonnen. 
-Berechnet wird anschliessend die Wahrscheinlichkeit, dass man auf eine Webseite stösst, wenn man sich zufällig durchs Web "klickt".
+Eine alternative Interpretation des PageRank-Algorithmus ist das *Random Surfer Model*. Wird der PageRank auf 1 normiert (1=100%), so kann der PageRank einer Webseite (bez. eines Knoten) als Wahrscheinlichkeit interpretiert werden, dass man auf eine Webseite stösst, wenn man sich zufällig durchs Web "klickt". Der PageRank 0.1 würde somit eine Wahrscheinlichkeit von 10% darstellen, dass man auf diese Seite stösst.
 
 ### Implementation
+
+Die Berechnung des PageRank erfolgt in der dazu erstellen Klasse *PageRank*. Mit der Funktion `evaluate()` wird für jeden Knoten im Graphen der PageRank berechnet. Der Algorithmus wird solange wiederholt, bis der Unterschied einer Iteration das Ergebnis nur noch um maximal `0.0001` (Variable `terminationDelta`) Punkte verändert oder die maximale Anzahl an defineirten Iterationen erfolgt ist (Variable `maxIterations`). Als Dämpfungsfaktor wurde `0.85` gewählt (Variable `dampingFactor`).
+Das Resultat aller PageRanks wird in sortierter Reihenfolge ausgegeben. Der resultierende PageRank eines Knoten entspricht dem Prozentwert, z.B. 0.25 entspricht 25%. Alle PageRanks ergeben zusammengezählt 100%.
+
+
+In der Klasse *TaskB* wird ein Beispiel-Graph mit einigen Knoten und Kanten erstellt. Anschliessend wird der PageRank des Graphen berechnet und ausgegeben. 
 
 * PageRank Algorithmus: [Class PageRank](page-rank-fuhrj2/src/main/java/PageRank.java)
 * TaskB: [Class TaskB](page-rank-fuhrj2/src/main/java/TaskB.java)
@@ -53,9 +60,13 @@ Berechnet wird anschliessend die Wahrscheinlichkeit, dass man auf eine Webseite 
 
 ### Implementation
 
-Für das Beispiel wurden Personen, unterteilt in berühmten Politiker und Freunde, gewählt. Der PageRank ermittelt hier die "Bekanntheit" der einzelnen Personen in der gesamten Auswahl an Personen. Je höher der PageRank, desto bekannter ist die Person in der Gruppe.
+Für dieses Beispiel wurden anstatt Webseiten Personen gewählt, unterteilt in berühmten Politiker und Freunde. Der PageRank ermittelt hier die "Bekanntheit" der einzelnen Personen in der gesamten Auswahl an Personen. Je höher der PageRank, desto bekannter ist die Person in der Gruppe.
 
 * TaskC: [Class TaskC](page-rank-fuhrj2/src/main/java/TaskC.java)
+
+**Visualized Graph**
+
+![pagerank-taskc](PageRank_TaskC.png)
 
 ## Sources
 - https://www.suchmaschinen-doktor.de/algorithmen/pagerank.html

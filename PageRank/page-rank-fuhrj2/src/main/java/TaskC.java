@@ -22,7 +22,6 @@ public class TaskC {
         graph.addEdge("Jan", "Roger");
         graph.addEdge("Jan", "Joe Biden");
         graph.addEdge("Jan", "Alain Berset");
-        graph.addEdge("Jan", "Mario");
 
         graph.addEdge("Mario", "Michelle");
         graph.addEdge("Mario", "Roger");
@@ -32,7 +31,6 @@ public class TaskC {
 
         graph.addEdge("Roger", "Alain Berset");
         graph.addEdge("Roger", "Michelle");
-        graph.addEdge("Roger", "Roger");
         graph.addEdge("Roger", "Mario");
 
         graph.addEdge("Michelle", "Jan");
