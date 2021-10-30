@@ -10,7 +10,7 @@ Es wurden die Klassen *Vertex* und *Graph* erstelt, welche die Knoten und den Di
 
 * Vertex: [Class Vertex](page-rank-fuhrj2/src/main/java/Vertex.java)
 * Graph: [Class Graph](page-rank-fuhrj2/src/main/java/Graph.java)
-* TaskA: [Class TaskA](page-rank-fuhrj2/src/main/java/TaskA.java)
+* TaskA: [Class Main](page-rank-fuhrj2/src/main/java/Main.java#L4)
 
 ## Task b
 
@@ -52,7 +52,7 @@ Das Resultat aller PageRanks wird in sortierter Reihenfolge ausgegeben. Der resu
 In der Klasse *TaskB* wird ein Beispiel-Graph mit einigen Knoten und Kanten erstellt. Anschliessend wird der PageRank des Graphen berechnet und ausgegeben. 
 
 * PageRank Algorithmus: [Class PageRank](page-rank-fuhrj2/src/main/java/PageRank.java)
-* TaskB: [Class TaskB](page-rank-fuhrj2/src/main/java/TaskB.java)
+* TaskB: [Class Main](page-rank-fuhrj2/src/main/java/Main.java#L41)
 
 ## Task c
 
@@ -62,7 +62,7 @@ In der Klasse *TaskB* wird ein Beispiel-Graph mit einigen Knoten und Kanten erst
 
 Für dieses Beispiel wurden anstatt Webseiten Personen gewählt, unterteilt in berühmten Politiker und Freunde. Der PageRank ermittelt hier die "Bekanntheit" der einzelnen Personen in der gesamten Auswahl an Personen. Je höher der PageRank, desto bekannter ist die Person in der Gruppe.
 
-* TaskC: [Class TaskC](page-rank-fuhrj2/src/main/java/TaskC.java)
+* TaskC: [Class Main](page-rank-fuhrj2/src/main/java/Main.java#L78)
 
 **Visualized Graph**
 
