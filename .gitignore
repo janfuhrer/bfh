@@ -10,3 +10,6 @@ Session.vim
 tags
 # Apple
 .DS_Store
+# IDE
+/*/.idea
+/*/*/target
