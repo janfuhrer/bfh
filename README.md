@@ -5,3 +5,4 @@ This repository contains some tasks of the programming modules I write during my
 ## Semester 3
 
 * [PageRank](PageRank)
+* [PingPong](PingPong)
