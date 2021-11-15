@@ -4,7 +4,7 @@
 package ch.bfh.akka.pingpong;
 
 import akka.actor.typed.ActorSystem;
-//import ch.bfh.akka.pingpong.PingPongRoot.InitMessage;
+import ch.bfh.akka.pingpong.PingPongRoot.InitMessage;
 
 import java.io.IOException;
 
